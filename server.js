@@ -18,7 +18,7 @@ const storage = multer.diskStorage({
 })
 const upload = multer({ storage: storage })
 
-link_server = "http://localhost:1000"
+link_server = "http://uploader-gilang.herokuapp.com/"
 
 app.use('/', express.static(__path + '/views'))
 app.use('/file', express.static(__path + '/uploads'))
@@ -80,6 +80,6 @@ app.post('/', upload.single('upload'), function (req, res, next) {
     } 
 })
 
-server.listen(1000, function () {
+server.listen(8080, function () {
     console.log("running")
 })
